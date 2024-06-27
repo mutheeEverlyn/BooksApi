@@ -36,8 +36,87 @@ app.use('*', registerMetrics)
 
 
 // default route
-app.get('/ok', (c) => {
-  return c.text('The server is running!')
+app.get('/',(c) =>{
+  return c.html(`
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1{
+        color:#fff;
+        }
+         h2 {
+            color: #007BFF;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size:30px;
+        }
+            .btn a{
+            text-decoration:none;
+            }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #007BFF;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to my Books API</h1>
+    </header>
+    <div class="container">
+        <h2>About</h2>
+        <p>My API helps you access data about a IT Books in Kirinyaga University.</p>
+        
+        <h2>Feel free to view the information by clicking the button below</h2>
+        <button class="btn"><a href="https://book-repository-application-seven.vercel.app/">click me!</a></button>
+    </div>
+    <footer>
+        <p>&copy; Everlyn Muthoni API. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+    `)
 })
 app.get('/timeout', async (c) => {
   await new Promise((resolve) => setTimeout(resolve, 11000))
