@@ -1,0 +1,47 @@
+
+GET http://localhost:8000/ok/
+
+###
+GET http://localhost:8000/timeout
+
+###
+
+GET http://localhost:8000/books?limit=4
+
+###
+
+GET http://localhost:8000/metrics
+
+###
+
+GET http://localhost:8000/books
+
+###
+
+POST http://localhost:8000/books
+Content-Type: application/json
+
+{
+   
+ "title": "serverside  programing",
+  "author": "Dr.mwangi",
+  "year": 2019
+}
+
+###
+
+PUT http://localhost:8000/books/12
+Content-Type: application/json
+
+{
+    "id":6
+}
+###
+DELETE http://localhost:8000/books/"9"
+
+###
+
+
+
+
+
